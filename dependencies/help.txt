@@ -1,0 +1,17 @@
+Pliki:
+libssl-3-x64.dll
+libcrypto-3-x64.dll
+
+wrzucic do folderu ../Build/x64/Release/bin/
+albo
+odpalic skrypta 
+move.ps1		-prawdopodobnie nie zadziala, wiec \/
+lub kliknac dwukrotnie
+move.bat
+
+Do tego jesli chcecie odpalic to na swojej maszynie polecam pobrac MySQL
+https://dev.mysql.com/downloads/mysql/
+w mainie jest hardcodowany path do hasla C:/passwd/mysql.txt,
+w pierwszej linijcie ustawcie sobie haslo do roota
+i zrobcie test czy wam dziala
+
