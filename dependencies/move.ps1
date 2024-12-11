@@ -21,7 +21,7 @@ foreach ($file in $sourceFiles) {
     $sourceFullPath = Join-Path -Path $scriptDirectory -ChildPath $file
     if (Test-Path -Path $sourceFullPath) {
         Write-Host "Moving $file to $destinationFullPath" -ForegroundColor Green
-        Move-Item -Path $sourceFullPath -Destination $destinationFullPath -Force
+        Copy-Item -Path $sourceFullPath -Destination $destinationFullPath -Force
     } else {
         Write-Host "File not found: $file" -ForegroundColor Red
     }

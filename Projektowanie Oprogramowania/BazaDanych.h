@@ -17,8 +17,10 @@ public:
 	void inicjalizuj(std::string username, std::string password, std::string server);
 	void wybierzBaze(std::string nazwa);
 
+	int sprowadzalneDoInt(std::string napis);
+
 	void uruchomPolecenie(std::string polecenie);
 	// pola podaj w postaci np. "name, quantity"
-	void wprowadzDane(std::string nazwaTabeli, std::string argumenty);
+	void wprowadzDane(std::string nazwaTabeli, std::string argumenty, int argc);
 };
 
