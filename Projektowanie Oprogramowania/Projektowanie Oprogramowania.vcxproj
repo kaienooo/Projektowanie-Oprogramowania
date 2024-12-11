@@ -136,6 +136,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)dependencies\mysql\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -147,12 +148,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BazaDanych.cpp" />
     <ClCompile Include="DaneProblemu.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Problem.cpp" />
     <ClCompile Include="ProblemManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BazaDanych.h" />
     <ClInclude Include="DaneProblemu.h" />
     <ClInclude Include="Problem.h" />
     <ClInclude Include="ProblemManager.h" />
