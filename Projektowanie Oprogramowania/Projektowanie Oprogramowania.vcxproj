@@ -153,12 +153,14 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Problem.cpp" />
     <ClCompile Include="ProblemManager.cpp" />
+    <ClCompile Include="Tabela.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BazaDanych.h" />
     <ClInclude Include="DaneProblemu.h" />
     <ClInclude Include="Problem.h" />
     <ClInclude Include="ProblemManager.h" />
+    <ClInclude Include="Tabela.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

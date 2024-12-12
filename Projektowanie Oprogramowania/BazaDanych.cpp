@@ -93,3 +93,11 @@ void BazaDanych::wprowadzDane(std::string nazwaTabeli, std::string argumenty, in
 
     delete pstmt;
 }
+
+void BazaDanych::zapiszDoBazy(std::string nazwaTabeli, std::string argumenty, int argc, std::string dane)
+{
+    sql::PreparedStatement* pstmt;
+
+    pstmt = con->prepareStatement(std::format("INSERT INTO {}({}) VALUES(?,?)", nazwaTabeli, argumenty));
+
+}

@@ -22,5 +22,8 @@ public:
 	void uruchomPolecenie(std::string polecenie);
 	// pola podaj w postaci np. "name, quantity"
 	void wprowadzDane(std::string nazwaTabeli, std::string argumenty, int argc);
+	//std::string dane - arg1 ; arg2; arg3; ... ;arg{argc}; arg21; arg22; arg23; ... ; arg2{argc}. Ilosc takich blokow oddzielonych ; ma byc wielokorotnoscia argc
+	//najpierw argumenty 1,2,3,...,c dla pierwszego wiersza, potem drugiego wiersza 1,2,3,...,c
+	void zapiszDoBazy(std::string nazwaTabeli, std::string argumenty, int argc, std::string dane);
 };
 
