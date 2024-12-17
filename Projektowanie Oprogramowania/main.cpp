@@ -35,5 +35,7 @@ int main()
     baza.wprowadzDane("inventory", "name, quantity", 2);
 
     system("pause");
+
+    // zmiana
     return 0;
 }
