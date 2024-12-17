@@ -2,7 +2,6 @@
 #include <iostream>
 #include <format>
 
-
 BazaDanych::BazaDanych() : con(0)
 {
     try
@@ -76,13 +75,21 @@ void BazaDanych::wprowadzDane(std::string nazwaTabeli, std::string argumenty, in
     {
         for (int i = 0; i < argc; i++)
         {
-            std::cout << "Podaj wartosc dla argumentu " << i << ":" << std::endl;
+            std::cout << "Podaj wartosc dla argumentu " << i << " ';' to exit" << ":" << std::endl;
             std::cin >> temp;
+
+            if (temp[0] == ';')
+            {
+                std::cout << "Zakonczono dodawanie!\n";
+                delete pstmt;
+                return;
+                break;
+            }
 
             if (temp_int = sprowadzalneDoInt(temp))
             {
                 pstmt->setInt(i + 1, temp_int);
-            }
+            }   
             else
             {
                 pstmt->setString(i + 1, temp);
@@ -90,8 +97,6 @@ void BazaDanych::wprowadzDane(std::string nazwaTabeli, std::string argumenty, in
         }
         pstmt->execute();
     }
-
-    delete pstmt;
 }
 
 void BazaDanych::zapiszDoBazy(std::string nazwaTabeli, std::string argumenty, int argc, std::string dane)
