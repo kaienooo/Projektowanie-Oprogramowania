@@ -30,7 +30,7 @@ class Mieszkaniec : public Profil
 {
     vector<string> info_nieruchomosci;
     vector<string>::iterator i;
-    string szczego³y_nieruchomosci;
+    string szczegoé€ _nieruchomosci;
 public:
     void menu();
     int logowanie(string);
@@ -49,7 +49,7 @@ void Mieszkaniec::menu()
     cout << "WITAMY W SYSTEMIE ZARZADZANIA NIERUCHOMOSCIAMI" << endl;
     cout << "1. Rejestracja uzytkownika" << endl;
     cout << "2. Zobacz dostepne nieruchomosci" << endl;
-    cout << "3. Powrot do menu g³ownego" << endl;
+    cout << "3. Powrot do menu gé€™wnego" << endl;
     cin >> wybor;
     switch (wybor)
     {
@@ -97,7 +97,7 @@ void Mieszkaniec::rejestracja_uzytkownika()
     cout << "Wprowadz swoje dane :-" << endl;
     cout << "Imie" << endl;
     cin >> imie;
-    cout << "Wprowadz has³o:" << endl;
+    cout << "Wprowadz hasé€™:" << endl;
     ch = _getch();
     while (ch != 13)
     {
@@ -110,9 +110,9 @@ void Mieszkaniec::rejestracja_uzytkownika()
     uid_demo = rand() % 9999999999 + 1; // stworz dowolna liczbe
     uid = long_to_string(uid_demo);
 
-    ofstream data("database_mieszkañcy.csv", ios::app);
+    ofstream data("database_mieszkaéŽy.csv", ios::app);
     data << uid << "," << imie << "," << haslo << "," << datetime.tm_year + 1900 << "/" << datetime.tm_mon + 1 << "/" << datetime.tm_mday << ",0,Niezameldowany" << endl;
-    // UID, IMIE, HASLO, ROK/MIESIAC/DZIEN ZAMELDOWANIA, SALDO, STATUS ZAMELDOWANIA (UID NIERUCHOMOŒCI LUB NIEZAMELDOWANY)
+    // UID, IMIE, HASLO, ROK/MIESIAC/DZIEN ZAMELDOWANIA, SALDO, STATUS ZAMELDOWANIA (UID NIERUCHOMOï•ºI LUB NIEZAMELDOWANY)
     cout << "----- Twoj unikalny kod identyfikacyjny to: " << uid << endl;
     data.close();
 }
@@ -124,7 +124,7 @@ int Mieszkaniec::logowanie(string) {
 
     cout << "Wprowadz unikalny kod identyfikacyjny " << endl;
     cin >> _uid;
-    cout << "Wprowadz has³o:" << endl;
+    cout << "Wprowadz hasé€™:" << endl;
     ch = _getch();
     while (ch != 13) {
         pass.push_back(ch);
@@ -133,7 +133,7 @@ int Mieszkaniec::logowanie(string) {
     }
     cout << endl;
 
-    ifstream check("database_mieszkañcy.csv");
+    ifstream check("database_mieszkaéŽy.csv");
     while (check.good()) {
         getline(check, uid, ',');
         getline(check, imie, ',');
@@ -195,7 +195,7 @@ void Mieszkaniec::zobacz_dane_konta()
 
     cout << "Wprowadz unikalny kod identyfikacyjny " << endl;
     cin >> _uid;
-    cout << "Wprowadz has³o:" << endl;
+    cout << "Wprowadz hasé€™:" << endl;
     ch = _getch();
     while (ch != 13)
     {
@@ -204,7 +204,7 @@ void Mieszkaniec::zobacz_dane_konta()
         ch = _getch();
     }
     cout << endl;
-    ifstream check("database_mieszkañcy.csv");
+    ifstream check("database_mieszkaéŽy.csv");
     while (check.good())
     {
         getline(check, uid, ',');
@@ -212,8 +212,8 @@ void Mieszkaniec::zobacz_dane_konta()
         getline(check, haslo, '\n');
         if (uid == _uid && haslo == pass)
         {
-            cout << "Twoje konto zosta³o wykryte" << endl;
-            cout << "UID\t\tIMIE\t\tHAS£O" << endl;
+            cout << "Twoje konto zostaé€™ wykryte" << endl;
+            cout << "UID\t\tIMIE\t\tHASÎœ" << endl;
             cout << uid << "\t\t" << imie << "\t\t" << haslo << endl;
             count = 1;
         }
@@ -243,33 +243,33 @@ void Mieszkaniec::wybor_uzytkownika(string city1, string type1, ifstream& r1)
     cout << "ID NIERUCHOMOSCI\tMIASTO\tPOWIERZCHNIA\tTYP\tCENA\tADRES" << endl; // rzeczy do dodania
     while (r1.good())
     {
-        getline(r1, szczego³y_nieruchomosci, ','); // -1
-        getline(r1, szczego³y_nieruchomosci, ','); // 0
-        info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-        getline(r1, szczego³y_nieruchomosci, ','); // 1
-        info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-        getline(r1, szczego³y_nieruchomosci, ','); // 2
-        info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-        getline(r1, szczego³y_nieruchomosci, ','); // 3
-        info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-        getline(r1, szczego³y_nieruchomosci, ','); // 4
-        info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-        getline(r1, szczego³y_nieruchomosci, ','); // 5
-        info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-        getline(r1, szczego³y_nieruchomosci, ','); // 6
-        info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-        getline(r1, szczego³y_nieruchomosci, ','); // 7
-        info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-        getline(r1, szczego³y_nieruchomosci, ','); // 8
-        info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-        getline(r1, szczego³y_nieruchomosci, ','); // 9
-        info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-        getline(r1, szczego³y_nieruchomosci, ','); // 10
-        info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-        getline(r1, szczego³y_nieruchomosci, ','); // 11
-        info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-        getline(r1, szczego³y_nieruchomosci, '\n'); // 12
-        info_nieruchomosci.push_back(szczego³y_nieruchomosci);
+        getline(r1, szczegoé€ _nieruchomosci, ','); // -1
+        getline(r1, szczegoé€ _nieruchomosci, ','); // 0
+        info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+        getline(r1, szczegoé€ _nieruchomosci, ','); // 1
+        info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+        getline(r1, szczegoé€ _nieruchomosci, ','); // 2
+        info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+        getline(r1, szczegoé€ _nieruchomosci, ','); // 3
+        info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+        getline(r1, szczegoé€ _nieruchomosci, ','); // 4
+        info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+        getline(r1, szczegoé€ _nieruchomosci, ','); // 5
+        info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+        getline(r1, szczegoé€ _nieruchomosci, ','); // 6
+        info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+        getline(r1, szczegoé€ _nieruchomosci, ','); // 7
+        info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+        getline(r1, szczegoé€ _nieruchomosci, ','); // 8
+        info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+        getline(r1, szczegoé€ _nieruchomosci, ','); // 9
+        info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+        getline(r1, szczegoé€ _nieruchomosci, ','); // 10
+        info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+        getline(r1, szczegoé€ _nieruchomosci, ','); // 11
+        info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+        getline(r1, szczegoé€ _nieruchomosci, '\n'); // 12
+        info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
         i = find(info_nieruchomosci.begin(), info_nieruchomosci.end(), city1);
         if (i != info_nieruchomosci.end())
             it++;
@@ -305,7 +305,7 @@ class Zarzadca : public Profil
     vector<string> info_zarzadcy;
     vector<string> info_nieruchomosci;
     vector<string>::iterator i;
-    string szczego³y_nieruchomosci;
+    string szczegoé€ _nieruchomosci;
 public:
     void menu();
     int logowanie(string);
@@ -323,8 +323,8 @@ void Zarzadca::menu()
     system("CLS");
     cout << "WITAMY W SYSTEMIE ZARZADZANIA NIERUCHOMOSCIAMI" << endl;
     cout << "1. Rejestracja uzytkownika" << endl;
-    cout << "2. Wprowadz szczego³y nieruchomosci, ktora chcesz sprzedac" << endl;
-    cout << "3. Powrot do menu g³ownego" << endl;
+    cout << "2. Wprowadz szczegoé€  nieruchomosci, ktora chcesz sprzedac" << endl;
+    cout << "3. Powrot do menu gé€™wnego" << endl;
     cin >> wybor;
     switch (wybor)
     {
@@ -370,7 +370,7 @@ int Zarzadca::logowanie(string _uid)
     char ch;
     int count = 0;
 
-    cout << "Wprowadz has³o:" << endl;
+    cout << "Wprowadz hasé€™:" << endl;
     ch = _getch();
     while (ch != 13)
     {
@@ -454,10 +454,10 @@ void Zarzadca::wprowadz_dane_nieruchomosci()
         cout << "Wprowadz rok budowy:" << endl;
         cin >> a;
         info_zarzadcy.push_back(a);
-        cout << "Wprowadz odleg³osc (w km) do najblizszej szko³y:" << endl;
+        cout << "Wprowadz odlegé€™sc (w km) do najblizszej szkoé€ :" << endl;
         cin >> a;
         info_zarzadcy.push_back(a);
-        cout << "Wprowadz odleg³osc (w km) do najblizszego szpitala:" << endl;
+        cout << "Wprowadz odlegé€™sc (w km) do najblizszego szpitala:" << endl;
         cin >> a;
         info_zarzadcy.push_back(a);
         cout << "Wprowadz dodatkowe informacje o swojej nieruchomosci" << endl;
@@ -480,7 +480,7 @@ void Zarzadca::wprowadz_dane_nieruchomosci()
         real << endl;
         real.close();
 
-        cout << "Twoje dane zosta³y pomyslnie dodane do bazy danych" << endl;
+        cout << "Twoje dane zostaé€  pomyslnie dodane do bazy danych" << endl;
     }
     else
     {
@@ -496,7 +496,7 @@ void Zarzadca::zobacz_dane_konta()
 
     cout << "Wprowadz unikalny kod identyfikacyjny " << endl;
     cin >> _uid;
-    cout << "Wprowadz has³o:" << endl;
+    cout << "Wprowadz hasé€™:" << endl;
     ch = _getch();
     while (ch != 13)
     {
@@ -514,8 +514,8 @@ void Zarzadca::zobacz_dane_konta()
         if (uid == _uid && haslo == pass)
         {
             ifstream r1("real_rent.csv");
-            cout << "Twoje konto zosta³o wykryte" << endl;
-            cout << "UID\t\tIMIE\t\tHAS£O" << endl;
+            cout << "Twoje konto zostaé€™ wykryte" << endl;
+            cout << "UID\t\tIMIE\t\tHASÎœ" << endl;
             cout << uid << "\t\t" << imie << "\t\t" << haslo << endl;
             count = 1;
             wybor_nieruchomosci(_uid, r1);
@@ -538,7 +538,7 @@ void Zarzadca::rejestracja_uzytkownika()
     cout << "Wprowadz swoje dane :-" << endl;
     cout << "Imie" << endl;
     cin >> imie;
-    cout << "Wprowadz has³o:" << endl;
+    cout << "Wprowadz hasé€™:" << endl;
     ch = _getch();
     while (ch != 13)
     {
@@ -568,47 +568,43 @@ void Zarzadca::wybor_nieruchomosci(string _uid, ifstream& r1)
     cout << "ID NIERUCHOMOSCI\tMIASTO\tPOWIERZCHNIA\tTYP\tCENA\tADRES" << endl; // rzeczy do dodania
     while (r1.good())
     {
-        getline(r1, szczego³y_nieruchomosci, ','); // -1
-        if (szczego³y_nieruchomosci == _uid)
+        getline(r1, szczegoÅ‚y_nieruchomosci, ','); // -1
+        if (szczegoÅ‚y_nieruchomosci == _uid)
         {
             it++;
         }
-        getline(r1, szczego³y_nieruchomosci, ','); // 0
-        info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-        getline(r1, szczego³y_nieruchomosci, ','); // 1
-        info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-        getline(r1, szczego³y_nieruchomosci, ','); // 2
-        info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-        getline(r1, szczego³y_nieruchomosci, ','); // 3
-        info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-        getline(r1, szczego³y_nieruchomosci, ','); // 4
-        info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-        getline(r1, szczego³y_nieruchomosci, ','); // 5
-        info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-        getline(r1, szczego³y_nieruchomosci, ','); // 6
-        info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-        getline(r1, szczego³y_nieruchomosci, ','); // 7
-        info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-        getline(r1, szczego³y_nieruchomosci, ','); // 8
-        info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-        getline(r1, szczego³y_nieruchomosci, ','); // 9
-        info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-        getline(r1, szczego³y_nieruchomosci, ','); // 10
-        info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-        getline(r1, szczego³y_nieruchomosci, ','); // 11
-        info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-        getline(r1, szczego³y_nieruchomosci, '\n'); // 12
-        info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-
-        i = find(info_nieruchomosci.begin(), info_nieruchomosci.end(), _uid);
-        if (i != info_nieruchomosci.end())
-            it++;
+        getline(r1, szczegoÅ‚y_nieruchomosci, ','); // 0
+        info_nieruchomosci.push_back(szczegoÅ‚y_nieruchomosci);
+        getline(r1, szczegoÅ‚y_nieruchomosci, ','); // 1
+        info_nieruchomosci.push_back(szczegoÅ‚y_nieruchomosci);
+        getline(r1, szczegoÅ‚y_nieruchomosci, ','); // 2
+        info_nieruchomosci.push_back(szczegoÅ‚y_nieruchomosci);
+        getline(r1, szczegoÅ‚y_nieruchomosci, ','); // 3
+        info_nieruchomosci.push_back(szczegoÅ‚y_nieruchomosci);
+        getline(r1, szczegoÅ‚y_nieruchomosci, ','); // 4
+        info_nieruchomosci.push_back(szczegoÅ‚y_nieruchomosci);
+        getline(r1, szczegoÅ‚y_nieruchomosci, ','); // 5
+        info_nieruchomosci.push_back(szczegoÅ‚y_nieruchomosci);
+        getline(r1, szczegoÅ‚y_nieruchomosci, ','); // 6
+        info_nieruchomosci.push_back(szczegoÅ‚y_nieruchomosci);
+        getline(r1, szczegoÅ‚y_nieruchomosci, ','); // 7
+        info_nieruchomosci.push_back(szczegoÅ‚y_nieruchomosci);
+        getline(r1, szczegoÅ‚y_nieruchomosci, ','); // 8
+        info_nieruchomosci.push_back(szczegoÅ‚y_nieruchomosci);
+        getline(r1, szczegoÅ‚y_nieruchomosci, ','); // 9
+        info_nieruchomosci.push_back(szczegoÅ‚y_nieruchomosci);
+        getline(r1, szczegoÅ‚y_nieruchomosci, ','); // 10
+        info_nieruchomosci.push_back(szczegoÅ‚y_nieruchomosci);
+        getline(r1, szczegoÅ‚y_nieruchomosci, ','); // 11
+        info_nieruchomosci.push_back(szczegoÅ‚y_nieruchomosci);
+        getline(r1, szczegoÅ‚y_nieruchomosci, '\n'); // 12
+        info_nieruchomosci.push_back(szczegoÅ‚y_nieruchomosci);
 
         if (it == 1)
         {
-            for (i = info_nieruchomosci.begin(); i != info_nieruchomosci.end(); ++i)
+            for (string j: info_nieruchomosci)
             {
-                cout << *i << "\t";
+                cout << j << "\t";
             }
             cout << endl;
         }
@@ -633,7 +629,7 @@ string Zarzadca::na_male(string s)
 }
 
 //---------------------------------------------------------------------------------------------(nowa klasa)
-class Administrator // do manipulacji danymi mieszkañcow i zarzadcow
+class Administrator // do manipulacji danymi mieszkaéŽow i zarzadcow
 {
     string haslo;
 public:
@@ -651,7 +647,7 @@ void Administrator::menu()
     string haslo_demo;
     int wybor;
     char ch;
-    cout << "Wprowadz has³o ADMINA" << endl;
+    cout << "Wprowadz hasé€™ ADMINA" << endl;
     ch = _getch();
     while (ch != 13)
     {
@@ -667,7 +663,7 @@ void Administrator::menu()
         cout << "---------- WITAMY W STREFIE ADMINISTRATORA --------" << endl;
         cout << "1. POKAZ DANE AKTUALNYCH UZYTKOWNIKOW" << endl;
         cout << "2. POKAZ NIERUCHOMOSCI W BAZIE DANYCH" << endl;
-        cout << "3. Powrot do menu g³ownego" << endl;
+        cout << "3. Powrot do menu gé€™wnego" << endl;
         cin >> wybor;
         switch (wybor)
         {
@@ -697,8 +693,8 @@ void Administrator::pokaz_dane_uzytkownikow()
     int wybor;
     cout << "------- WITAMY ADMINISTRATORA -------" << endl;
     cout << "1. ZOBACZ DANE ZARZADCOW" << endl;
-    cout << "2. ZOBACZ DANE MIESZKAÑCOW" << endl;
-    cout << "3. POWROT DO MENU G£OWNEGO" << endl;
+    cout << "2. ZOBACZ DANE MIESZKAå“¸OW" << endl;
+    cout << "3. POWROT DO MENU GÎœWNEGO" << endl;
     cin >> wybor;
     switch (wybor)
     {
@@ -706,7 +702,7 @@ void Administrator::pokaz_dane_uzytkownikow()
     {
         ifstream check("database_zarzadcy.csv");
         cout << "DANE UZYTKOWNIKOW ZAREJESTROWANYCH W SEKCJI ZARZADCOW" << endl;
-        cout << "UID\t\tIMIE\t\tHAS£O" << endl;
+        cout << "UID\t\tIMIE\t\tHASÎœ" << endl;
         while (getline(check, uid, ','))
         {
             getline(check, imie, ',');
@@ -719,9 +715,9 @@ void Administrator::pokaz_dane_uzytkownikow()
     }
     case 2:
     {
-        ifstream check("database_mieszkañcy.csv");
-        cout << "DANE UZYTKOWNIKOW ZAREJESTROWANYCH W SEKCJI MIESZKAÑCOW" << endl;
-        cout << "UID\t\tIMIE\t\tHAS£O" << endl;
+        ifstream check("database_mieszkaéŽy.csv");
+        cout << "DANE UZYTKOWNIKOW ZAREJESTROWANYCH W SEKCJI MIESZKAå“¸OW" << endl;
+        cout << "UID\t\tIMIE\t\tHASÎœ" << endl;
         while (getline(check, uid, ','))
         {
             getline(check, imie, ',');
@@ -743,12 +739,12 @@ void Administrator::pokaz_nieruchomosci()
 {
     vector<string> info_nieruchomosci;
     vector<string>::iterator i;
-    string szczego³y_nieruchomosci;
+    string szczegoé€ _nieruchomosci;
     int wybor;
     cout << "------- WITAMY ADMINISTRATORA -------" << endl;
     cout << "1. ZOBACZ NIERUCHOMOSCI W SEKCJI SPRZEDAZY" << endl;
     cout << "2. ZOBACZ NIERUCHOMOSCI W SEKCJI WYNAJMU" << endl;
-    cout << "3. POWROT DO MENU G£OWNEGO" << endl;
+    cout << "3. POWROT DO MENU GÎœWNEGO" << endl;
     cin >> wybor;
     switch (wybor)
     {
@@ -756,35 +752,35 @@ void Administrator::pokaz_nieruchomosci()
     {
         ifstream check("real_buy.csv");
         cout << "DANE NIERUCHOMOSCI W SEKCJI SPRZEDAZY" << endl;
-        cout << "UID\t\tIMIE\t\tHAS£O" << endl; // do dodania
+        cout << "UID\t\tIMIE\t\tHASÎœ" << endl; // do dodania
         while (check.good())
         {
-            getline(check, szczego³y_nieruchomosci, ','); // 0
-            info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-            getline(check, szczego³y_nieruchomosci, ','); // 1
-            info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-            getline(check, szczego³y_nieruchomosci, ','); // 2
-            info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-            getline(check, szczego³y_nieruchomosci, ','); // 3
-            info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-            getline(check, szczego³y_nieruchomosci, ','); // 4
-            info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-            getline(check, szczego³y_nieruchomosci, ','); // 5
-            info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-            getline(check, szczego³y_nieruchomosci, ','); // 6
-            info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-            getline(check, szczego³y_nieruchomosci, ','); // 7
-            info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-            getline(check, szczego³y_nieruchomosci, ','); // 8
-            info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-            getline(check, szczego³y_nieruchomosci, ','); // 9
-            info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-            getline(check, szczego³y_nieruchomosci, ','); // 10
-            info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-            getline(check, szczego³y_nieruchomosci, ','); // 11
-            info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-            getline(check, szczego³y_nieruchomosci, '\n'); // 12
-            info_nieruchomosci.push_back(szczego³y_nieruchomosci);
+            getline(check, szczegoé€ _nieruchomosci, ','); // 0
+            info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+            getline(check, szczegoé€ _nieruchomosci, ','); // 1
+            info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+            getline(check, szczegoé€ _nieruchomosci, ','); // 2
+            info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+            getline(check, szczegoé€ _nieruchomosci, ','); // 3
+            info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+            getline(check, szczegoé€ _nieruchomosci, ','); // 4
+            info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+            getline(check, szczegoé€ _nieruchomosci, ','); // 5
+            info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+            getline(check, szczegoé€ _nieruchomosci, ','); // 6
+            info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+            getline(check, szczegoé€ _nieruchomosci, ','); // 7
+            info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+            getline(check, szczegoé€ _nieruchomosci, ','); // 8
+            info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+            getline(check, szczegoé€ _nieruchomosci, ','); // 9
+            info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+            getline(check, szczegoé€ _nieruchomosci, ','); // 10
+            info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+            getline(check, szczegoé€ _nieruchomosci, ','); // 11
+            info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+            getline(check, szczegoé€ _nieruchomosci, '\n'); // 12
+            info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
             for (i = info_nieruchomosci.begin(); i != info_nieruchomosci.end(); ++i)
             {
                 cout << *i << "\t";
@@ -799,35 +795,35 @@ void Administrator::pokaz_nieruchomosci()
     {
         ifstream check("real_rent.csv");
         cout << "DANE NIERUCHOMOSCI W SEKCJI WYNAJMU" << endl;
-        cout << "UID\t\tIMIE\t\tHAS£O" << endl; // do dodania
+        cout << "UID\t\tIMIE\t\tHASÎœ" << endl; // do dodania
         while (check.good())
         {
-            getline(check, szczego³y_nieruchomosci, ','); // 0
-            info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-            getline(check, szczego³y_nieruchomosci, ','); // 1
-            info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-            getline(check, szczego³y_nieruchomosci, ','); // 2
-            info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-            getline(check, szczego³y_nieruchomosci, ','); // 3
-            info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-            getline(check, szczego³y_nieruchomosci, ','); // 4
-            info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-            getline(check, szczego³y_nieruchomosci, ','); // 5
-            info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-            getline(check, szczego³y_nieruchomosci, ','); // 6
-            info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-            getline(check, szczego³y_nieruchomosci, ','); // 7
-            info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-            getline(check, szczego³y_nieruchomosci, ','); // 8
-            info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-            getline(check, szczego³y_nieruchomosci, ','); // 9
-            info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-            getline(check, szczego³y_nieruchomosci, ','); // 10
-            info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-            getline(check, szczego³y_nieruchomosci, ','); // 11
-            info_nieruchomosci.push_back(szczego³y_nieruchomosci);
-            getline(check, szczego³y_nieruchomosci, '\n'); // 12
-            info_nieruchomosci.push_back(szczego³y_nieruchomosci);
+            getline(check, szczegoé€ _nieruchomosci, ','); // 0
+            info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+            getline(check, szczegoé€ _nieruchomosci, ','); // 1
+            info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+            getline(check, szczegoé€ _nieruchomosci, ','); // 2
+            info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+            getline(check, szczegoé€ _nieruchomosci, ','); // 3
+            info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+            getline(check, szczegoé€ _nieruchomosci, ','); // 4
+            info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+            getline(check, szczegoé€ _nieruchomosci, ','); // 5
+            info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+            getline(check, szczegoé€ _nieruchomosci, ','); // 6
+            info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+            getline(check, szczegoé€ _nieruchomosci, ','); // 7
+            info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+            getline(check, szczegoé€ _nieruchomosci, ','); // 8
+            info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+            getline(check, szczegoé€ _nieruchomosci, ','); // 9
+            info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+            getline(check, szczegoé€ _nieruchomosci, ','); // 10
+            info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+            getline(check, szczegoé€ _nieruchomosci, ','); // 11
+            info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
+            getline(check, szczegoé€ _nieruchomosci, '\n'); // 12
+            info_nieruchomosci.push_back(szczegoé€ _nieruchomosci);
             for (i = info_nieruchomosci.begin(); i != info_nieruchomosci.end(); ++i)
             {
                 cout << *i << "\t";
